@@ -26,11 +26,14 @@ $(function(){
     $(".header .spot-menu a").eq(2).css({'display': 'none'});
   };
 
-  $(".nav").mouseenter(showGnb);
+  // 실행
+  function init() {
+    $(".nav").mouseenter(showGnb);
+    $(".nav").mouseleave(removeGnb);
+    $(".gnb a").focus(showGnb);
+    $(".spot-menu a").focus(removeGnb);
+  }
 
-  $(".nav").mouseleave(removeGnb);
-
-  $(".gnb a").focus(showGnb);
-  $(".spot-menu a").focus(removeGnb);
+  init();
 
 });

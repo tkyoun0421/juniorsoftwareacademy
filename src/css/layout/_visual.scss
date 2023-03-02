@@ -53,7 +53,7 @@
         stroke-dasharray: 125.6;
         transform: rotate(-90deg);
       }
-      .btn-autoplay {
+      .btn-control {
         z-index: 11;
         position: absolute;
         top: 50%;
@@ -64,6 +64,9 @@
           color: $whitef7;
           cursor: pointer;
         }
+      }
+      .play {
+        display: none;
       }
     }
     .inner {

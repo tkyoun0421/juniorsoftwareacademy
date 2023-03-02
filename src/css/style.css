@@ -412,7 +412,7 @@ body {
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
 }
-.visual .swiper-controller .autoplay-progress .btn-autoplay {
+.visual .swiper-controller .autoplay-progress .btn-control {
   z-index: 11;
   position: absolute;
   top: 50%;
@@ -420,9 +420,12 @@ body {
   transform: translate(-50%, -50%);
   background-color: transparent;
 }
-.visual .swiper-controller .autoplay-progress .btn-autoplay i {
+.visual .swiper-controller .autoplay-progress .btn-control i {
   color: #f7f7f7;
   cursor: pointer;
+}
+.visual .swiper-controller .autoplay-progress .play {
+  display: none;
 }
 .visual .swiper-controller .inner {
   display: flex;

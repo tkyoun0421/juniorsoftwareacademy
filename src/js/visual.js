@@ -1,6 +1,10 @@
+
+// 변수 선언
 const progressCircle = document.querySelector(".autoplay-progress svg");
 const progressContent = document.querySelector(".autoplay-progress span");
 const autoplayStop = document.querySelector(".btn-autoplay");
+const $autoSwiperStopBtn = $('.btn-control.stop');
+const $autoSwiperPlayBtn = $('.btn-control.play');
 
 var swiper = new Swiper(".visual-swiper", {
 
@@ -31,18 +35,23 @@ var swiper = new Swiper(".visual-swiper", {
   }  
 });
 
-function autoplayToggle() {
-  const autoplayBtn = document.querySelector(".btn-autoplay i");
+function autoSwiperStop() {
   swiper.autoplay.resume();
-  if (autoplayBtn.classList.contains('fa-pause')) {
-    autoplayBtn.classList.remove('fa-pause');
-    autoplayBtn.classList.add('fa-play');
-    swiper.autoplay.stop();
-  } else {
-    autoplayBtn.classList.remove('fa-play');
-    autoplayBtn.classList.add('fa-pause');
-    swiper.autoplay.start();
-  }
+  swiper.autoplay.stop();
+  $autoSwiperStopBtn.css('display', 'none');
+  $autoSwiperPlayBtn.css('display', 'block');  
 }
 
-autoplayStop.addEventListener("click", autoplayToggle);
+function autoSwiperPlay() {
+  swiper.autoplay.start();
+  swiper.autoplay.resume();
+  $autoSwiperPlayBtn.css('display', 'none');  
+  $autoSwiperStopBtn.css('display', 'block');  
+}
+
+function init() {
+  $autoSwiperStopBtn.on("click", autoSwiperStop);
+  $autoSwiperPlayBtn.on("click", autoSwiperPlay);
+}
+
+init();
