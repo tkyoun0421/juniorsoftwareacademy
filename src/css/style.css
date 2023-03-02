@@ -394,6 +394,10 @@ body {
   height: 40px;
   z-index: 5;
 }
+.visual .swiper-controller .autoplay-progress .circle-box {
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-dashoffset: 0px;
+}
 .visual .swiper-controller .autoplay-progress svg {
   --progress: 0;
   position: absolute;
