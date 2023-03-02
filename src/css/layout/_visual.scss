@@ -23,8 +23,13 @@
     left: 100px;
     bottom: 80px;
     display: flex;
-    width: 220px;
     z-index: 4;
+    @include vp1600 {
+      left: 60px;
+    }
+    @include vp768 {
+      left: 15px;
+    }
     .autoplay-progress {
       position: relative;
       width: 40px;
@@ -44,23 +49,186 @@
         stroke-dasharray: 125.6;
         transform: rotate(-90deg);
       }
-      i {
+      .btn-autoplay {
+        z-index: 11;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: $whitef7;
+        background-color: transparent;
+        i {
+          color: $whitef7;
+          cursor: pointer;
+        }
       }
     }
-    .swiper-button-next,
-    .swiper-button-prev {
-      width: 8px;
-      height: 13px;
-      color: $whitef7;
-    }
+    .inner {
+      @include aic;
+      margin-left: 50px;
+      @include vp768 {
+        margin-left: 30px;
+      }
+      .swiper-pagination {
+        @include aic;
+        position: inherit;
+        margin: 0 30px;
+        height: 100%;
+        font-size: 18px;
+        color: $whitef7;
+        :nth-child(1) ~ span {
+          opacity: 0.5;
+        }
+        @include vp1200 {
+          font-size: 17px;
+        }
+        @include vp768 {
+          font-size: 14px;
+          margin: 0 20px;
+        }
+        .bar {
+          margin: 0 15px;
+        }
+      }
+      button {
+        @include aic;
+        font-size: 18px;
+        width: 8px;
+        height: 100%;
+        background-color: transparent;
+        color: $whitef7;
+        opacity: 0.5;
+        font-weight: 300;
+        @include vp768 {
+          font-size: 17px;
+        }
+      }
+      :hover {
+        opacity: 1;
+      }
+    }    
   }
   .swiper-textbox {
+    @include ab(10%, 50%);
+    color: $white;
+    font-weight: 700;
+    z-index: 10;
+    padding: 0 20px;
+    img {
+      width: 250px;
+      margin-bottom: 30px;
+      @include vp2000 {
+        width: 200px;
+      }
+      @include vp1600 {
+        width: 160px;
+      }
+    }
+    p {
+      font-size: 60px;
+      pointer-events: none;
+      @include vp2000 {
+        font-size: 50px;
+      }
+      @include vp1600 {
+        font-size: 42px;
+      }
+      @include vp1200 {
+        font-size: 36px;
+      }
+      @include vp768 {
+        font-size: 24px;
+      }
+      + p {
+        margin-top: 25px;
+        @include vp768 {
+          margin-top: 20px;
+        }
+      }
+    }
+    a {
+      display: inline-block;
+      margin-top: 90px;
+      font-size: 17px;
+      color: $white;
+      @include vp1600 {
+        font-size: 16px;
+      }
+      @include vp1200 {
+        margin-top: 45px;
+      }
+      @include vp768 {
+        font-size: 14px;
+      }
+      span {
+        position: relative;
+        margin-left: 15px;
+        i {
+          font-size: 18px;
+          color: $white;
+          transform: translateX(-10px);
+          transition: transform .4s ease-in-out;
+          z-index: 4;
+          @include vp768 {
+            font-size: 12px;
+            transform: translateX(-5px);
+          }
+        }
+      }
+      span:hover i,
+      span:focus i {
+        transform: translateX(0);
+      }
+      span::after {
+        content: '';
+        @include ab(50%, 50%);
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $blue2d;
+        z-index: -1;
+        @include vp768 {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+  }
+}
+.scroll-ani {
+  position: absolute;
+  left: 50%;
+  bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 7;
+  text-transform: capitalize;
+  color: $white;
+  font-size: 13px;
+  @include vp1200 {
+    display: none;
+  }
+  .mouse {
+    position: relative;
+    width: 20px;
+    height: 35px;
+    border-radius: 50px;
+    border: 2px solid $white;
+    margin: 0 auto;
+  }
+  .mouse::after {
+    content: '';
     position: absolute;
+    top: 0;
+    left: 6px;
+    transform: translateX(-50%);
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: $white;
+    animation: scrolldown 2s infinite;
   }
 }
 
