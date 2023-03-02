@@ -1,15 +1,79 @@
-.slide1 .img-box {
-  background: url('../images/img-visual1.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
+.visual {
+  position: relative;   
+  .swiper {
+    .swiper-wrapper {  
+      .swiper-slide {
+        .img-box {
+          height: 100vh;
+        }
+        &.swiper-slide-active .img-box{
+          animation: fadezoom 4s 0s forwards;
+        }
+      }
+      .slide1 .img-box {
+        @include bg("img-visual1.jpg");
+      }
+      .slide2 .img-box {
+        @include bg("img-visual2.jpg");
+      }
+    }
+  }
+  .swiper-controller {
+    position: absolute;
+    left: 100px;
+    bottom: 80px;
+    display: flex;
+    width: 220px;
+    z-index: 4;
+    .autoplay-progress {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      z-index: 5;
+      svg {
+        --progress: 0;
+        position: absolute;
+        top: 0px;
+        z-index: 10;
+        width: 40px;
+        height: 40px;
+        stroke-width: 4px;
+        stroke: $whitef7;
+        fill: none;
+        stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+        stroke-dasharray: 125.6;
+        transform: rotate(-90deg);
+      }
+      i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $whitef7;
+      }
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 8px;
+      height: 13px;
+      color: $whitef7;
+    }
+  }
+  .swiper-textbox {
+    position: absolute;
+  }
 }
 
-.slide2 .img-box {
-  background: url('../images/img-visual2.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
+.visual::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: $black;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  z-index: 2;
+  pointer-events: none;
 }

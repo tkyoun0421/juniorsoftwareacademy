@@ -1,0 +1,28 @@
+.spot-menu {
+  @include aic;
+  a {
+    i {
+      width: 19px;
+      height: 21px; 
+      color: $whitef7; 
+    }
+    img {
+      width: 22px;
+      height: 21px;
+    }
+  } 
+  button {
+    background-color: transparent;
+  } 
+  span {
+    font-size: 13px;
+    color: $whitef7;
+  }
+  [aria-hidden] {
+    display: none;
+    color: $whitef7;
+    @include tablet {
+      display: block;
+    }
+  }
+}

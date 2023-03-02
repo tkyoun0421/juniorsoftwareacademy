@@ -9,19 +9,33 @@
   clip: rect(1px, 1px, 1px, 1px);
 }
 
+// 백그라운드 이미지
+@mixin bg($url) {
+  background: url(#{$imgURL}#{$url});
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 // 반응형
 @mixin hidden {
   display: none;
 }
 
 @mixin tablet {
-  @media (min-width: $mobile) and (min-width: $tab) {
+  @media (min-width: 0) and (max-width: $tablet) {
     @content;
   }
 }
 
 @mixin mobile {
-  @media (min-width: 0) and (min-width: $mobile) {
+  @media (min-width: 0) and (max-width: $mobile) {
     @content;
   }
+}
+
+// 정렬
+@mixin aic {
+  display: flex;
+  align-items: center;
 }

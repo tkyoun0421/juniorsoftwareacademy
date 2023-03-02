@@ -1,7 +1,6 @@
 #header {
-  display: flex;
+  @include aic;
   justify-content: space-between;
-  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -9,45 +8,16 @@
   height: 100px;
   padding: 0 40px;
   z-index: 1000;
-}
-
-.logo a {
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  width: 120px;
-  vertical-align: middle;  
-}
-
-.logo img:nth-child(2) ~ img {
-  margin-left: 30px;
-}
-
-nav {
-  height: 100%;
-}
-
-.gnb {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 640px;
-  height: 100%;
-}
-
-.gnb li {
-  height: 100%;
-}
-
-nav ul li a {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 0 20px;
-  font-size: 19px;
-  font-weight: 500;
-  color: $whitef7;
-  text-transform: uppercase;
+  .logo {
+    a {
+      @include aic;
+      img {
+        width: 120px;
+        vertical-align: middle;  
+      }      
+      img:nth-child(2) ~ img {
+        margin-left: 30px;
+      }
+    }
+  }
 }

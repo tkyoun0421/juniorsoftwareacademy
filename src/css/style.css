@@ -115,10 +115,18 @@ body {
   font-family: "Noto Sans KR", "Roboto", sans-serif;
 }
 
+@keyframes fadezoom {
+  from {
+    transform: scale(1.15);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 #header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
@@ -127,38 +135,112 @@ body {
   padding: 0 40px;
   z-index: 1000;
 }
-
-.logo a {
+#header .logo a {
   display: flex;
   align-items: center;
 }
-
-.logo img {
+#header .logo a img {
   width: 120px;
   vertical-align: middle;
 }
-
-.logo img:nth-child(2) ~ img {
+#header .logo a img:nth-child(2) ~ img {
   margin-left: 30px;
+}
+
+.visual {
+  position: relative;
+}
+.visual .swiper .swiper-wrapper .swiper-slide .img-box {
+  height: 100vh;
+}
+.visual .swiper .swiper-wrapper .swiper-slide.swiper-slide-active .img-box {
+  animation: fadezoom 4s 0s forwards;
+}
+.visual .swiper .swiper-wrapper .slide1 .img-box {
+  background: url(../images/img-visual1.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.visual .swiper .swiper-wrapper .slide2 .img-box {
+  background: url(../images/img-visual2.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.visual .swiper-controller {
+  position: absolute;
+  left: 100px;
+  bottom: 80px;
+  display: flex;
+  width: 220px;
+  z-index: 4;
+}
+.visual .swiper-controller .autoplay-progress {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  z-index: 5;
+}
+.visual .swiper-controller .autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  top: 0px;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  stroke-width: 4px;
+  stroke: #f7f7f7;
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+.visual .swiper-controller .autoplay-progress i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f7f7f7;
+}
+.visual .swiper-controller .swiper-button-next,
+.visual .swiper-controller .swiper-button-prev {
+  width: 8px;
+  height: 13px;
+  color: #f7f7f7;
+}
+.visual .swiper-textbox {
+  position: absolute;
+}
+
+.visual::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  z-index: 2;
+  pointer-events: none;
 }
 
 nav {
   height: 100%;
 }
-
-.gnb {
+nav .gnb {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   width: 640px;
   height: 100%;
 }
-
-.gnb li {
+nav .gnb li {
   height: 100%;
 }
-
-nav ul li a {
+nav .gnb li a {
   display: flex;
   align-items: center;
   height: 100%;
@@ -169,18 +251,32 @@ nav ul li a {
   text-transform: uppercase;
 }
 
-.slide1 .img-box {
-  background: url("../images/img-visual1.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
+.spot-menu {
+  display: flex;
+  align-items: center;
 }
-
-.slide2 .img-box {
-  background: url("../images/img-visual2.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
+.spot-menu a i {
+  width: 19px;
+  height: 21px;
+  color: #f7f7f7;
+}
+.spot-menu a img {
+  width: 22px;
+  height: 21px;
+}
+.spot-menu button {
+  background-color: transparent;
+}
+.spot-menu span {
+  font-size: 13px;
+  color: #f7f7f7;
+}
+.spot-menu [aria-hidden] {
+  display: none;
+  color: #f7f7f7;
+}
+@media (min-width: 0) and (max-width: 1200px) {
+  .spot-menu [aria-hidden] {
+    display: block;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -3,6 +3,10 @@
 
 @import "base/reset"; //리셋
 @import "base/typography"; //텍스트
+@import "base/animation"; //애니메이션
 
 @import "layout/header"; //헤더 영역
 @import "layout/visual"; //비쥬얼 영역
+
+@import "component/gnb"; // gnb
+@import "component/spot-menu"; //스팟 메뉴

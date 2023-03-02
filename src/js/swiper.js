@@ -1,9 +1,19 @@
+const progressCircle = document.querySelector(".autoplay-progress svg");
+const progressContent = document.querySelector(".autoplay-progress span");
+
 var swiper = new Swiper(".visual-swiper", {
 
-  loop: true, // 무한 루프
+  centeredSlides: true,
   autoplay: {
-    delay: 5000 //5초의 딜레이를 주고 자동 재생된다
+    delay: 5000,
+    disableOnInteraction: false,
   },
+  loop: true,
+  effect: "fade",
+  fadeEffect: {
+    crossFade: true,
+  },
+  speed: 1000,
 
   pagination: {
     el: ".swiper-pagination",
@@ -13,4 +23,9 @@ var swiper = new Swiper(".visual-swiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  on: {    
+    autoplayTimeLeft(s, time, progress) {
+      progressCircle.style.setProperty("--progress", 1 - progress);
+    }
+  }  
 });
