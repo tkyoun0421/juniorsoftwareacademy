@@ -312,13 +312,13 @@ body {
     display: none;
   }
 }
-.header .spot-menu [aria-hidden] {
+.header .spot-menu .bars {
   display: none;
   color: #f7f7f7;
   font-size: 21px;
 }
 @media (min-width: 0) and (max-width: 1200px) {
-  .header .spot-menu [aria-hidden] {
+  .header .spot-menu .bars {
     display: block;
   }
 }
