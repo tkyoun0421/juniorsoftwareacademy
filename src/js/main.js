@@ -3,9 +3,9 @@ $(function(){
   // 뷰포트 반응형
   $(window).resize(function(){
     if($(window).width() < 1600) {
-      $(".spot-menu a span").eq(0).addClass("blind");
+      $(".spot-menu .login span").addClass("blind");
     } else {
-      $(".spot-menu a span").eq(0).removeClass("blind")
+      $(".spot-menu .login span").removeClass("blind")
     }
   });
   

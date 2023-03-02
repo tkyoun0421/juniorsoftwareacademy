@@ -111,17 +111,19 @@
   }
   .spot-menu {
     @include aic;
+    .login {
+      display: flex;
+      i {
+        font-size: 21px;
+        color: $white;
+      }
+    }
     a {
       height: 30px;
       padding: 0 20px;
       @include vp1200 {
         padding: 0 10px;
-      }
-      i {
-        width: 19px;
-        height: 21px; 
-        color: $whitef7; 
-      }
+      }      
       img {
         width: 22px;
         height: 21px;

@@ -111,7 +111,7 @@ img {
   max-width: 100%;
 }
 
-body {
+* {
   font-family: "Noto Sans KR", "Roboto", sans-serif;
 }
 
@@ -267,6 +267,13 @@ body {
   display: flex;
   align-items: center;
 }
+.header .spot-menu .login {
+  display: flex;
+}
+.header .spot-menu .login i {
+  font-size: 21px;
+  color: #fff;
+}
 .header .spot-menu a {
   height: 30px;
   padding: 0 20px;
@@ -275,11 +282,6 @@ body {
   .header .spot-menu a {
     padding: 0 10px;
   }
-}
-.header .spot-menu a i {
-  width: 19px;
-  height: 21px;
-  color: #f7f7f7;
 }
 .header .spot-menu a img {
   width: 22px;
