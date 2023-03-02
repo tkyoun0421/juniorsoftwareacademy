@@ -1,0 +1,27 @@
+// IR
+@mixin blind {
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  border: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+// 반응형
+@mixin hidden {
+  display: none;
+}
+
+@mixin tablet {
+  @media (min-width: $mobile) and (min-width: $tab) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (min-width: 0) and (min-width: $mobile) {
+    @content;
+  }
+}
