@@ -14,16 +14,16 @@ $(function(){
     $(".header").addClass("show");
     $(".header .logo img").odd().removeClass("hidden");
     $(".header .logo img").even().addClass("hidden");
-    $(".header .spot-menu a").eq(1).css({'display': 'none'});
-    $(".header .spot-menu a").eq(2).css({'display': 'block'});
+    $(".header .spot-menu .kakao").eq(0).css({'display': 'none'});
+    $(".header .spot-menu .kakao").eq(1).css({'display': 'block'});
   };
 
   function removeGnb() {
     $(".header").removeClass("show");
     $(".header .logo img").even().removeClass("hidden");
     $(".header .logo img").odd().addClass("hidden");
-    $(".header .spot-menu a").eq(1).css({'display': 'block'});
-    $(".header .spot-menu a").eq(2).css({'display': 'none'});
+    $(".header .spot-menu .kakao").eq(0).css({'display': 'block'});
+    $(".header .spot-menu .kakao").eq(1).css({'display': 'none'});
   };
 
   // 실행

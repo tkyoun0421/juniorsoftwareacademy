@@ -157,7 +157,7 @@
       color: $whitef7;
       font-size: 21px;
       @include vp1200 {
-        display: block;
+        display: flex;
       }
     }
   }
@@ -188,6 +188,14 @@
       }
     }
     .spot-menu {
+      .login {
+        i {
+          color: $black;
+        }
+        span {
+          color: $black;
+        }
+      }
       a {
         i {
           color: $black; 

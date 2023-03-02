@@ -321,7 +321,7 @@ img {
 }
 @media (min-width: 0) and (max-width: 1200px) {
   .header .spot-menu .bars {
-    display: block;
+    display: flex;
   }
 }
 .header.show {
@@ -344,6 +344,12 @@ img {
   opacity: 1;
   transition: all 0.3s;
   border-top: 1px solid #D2E0E9;
+}
+.header.show .spot-menu .login i {
+  color: #000;
+}
+.header.show .spot-menu .login span {
+  color: #000;
 }
 .header.show .spot-menu a i {
   color: #000;
