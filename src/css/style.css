@@ -120,10 +120,39 @@ h2 {
   font-weight: 700;
   text-transform: uppercase;
 }
+@media (min-width: 0) and (max-width: 768px) {
+  h2 {
+    font-size: 32px;
+  }
+}
 
 h3 {
   font-size: 32px;
   font-weight: 600;
+}
+@media (min-width: 0) and (max-width: 1200px) {
+  h3 {
+    font-size: 28px;
+  }
+}
+@media (min-width: 0) and (max-width: 768px) {
+  h3 {
+    font-size: 20px;
+  }
+}
+
+.text {
+  font-size: 17px;
+}
+@media (min-width: 0) and (max-width: 1200px) {
+  .text {
+    font-size: 15px;
+  }
+}
+@media (min-width: 0) and (max-width: 768px) {
+  .text {
+    font-size: 13px;
+  }
 }
 
 @keyframes fadezoom {
@@ -370,6 +399,13 @@ h3 {
   }
 }
 
+.header.scroll .nav .gnb .depth1 a {
+  color: #fff;
+}
+.header.scroll .nav .gnb .depth1 .gnb2 {
+  display: none;
+}
+
 .header .spot-menu {
   display: flex;
   align-items: center;
@@ -448,6 +484,25 @@ h3 {
 .header.show .spot-menu a span {
   color: #000;
 }
+.header.show .spot-menu .bars {
+  color: #000;
+}
+
+.header.scroll .spot-menu .login i {
+  color: #000;
+}
+.header.scroll .spot-menu .login span {
+  color: #000;
+}
+.header.scroll .spot-menu a i {
+  color: #000;
+}
+.header.scroll .spot-menu a span {
+  color: #000;
+}
+.header.scroll .spot-menu .bars {
+  color: #000;
+}
 
 .header {
   display: flex;
@@ -485,6 +540,9 @@ h3 {
   margin-left: 30px;
 }
 .header.show {
+  background-color: #fff;
+}
+.header.scroll {
   background-color: #fff;
 }
 

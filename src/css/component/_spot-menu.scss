@@ -74,6 +74,33 @@
           color: $black;
         }
       } 
+      .bars {
+        color: $black;
+      }
+    }
+  }
+}
+
+.header.scroll {
+  .spot-menu {
+    .login {
+      i {
+        color: $black;
+      }
+      span {
+        color: $black;
+      }
+    }
+    a {
+      i {
+        color: $black; 
+      }
+      span {
+        color: $black;
+      }
+    } 
+    .bars {
+      color: $black;
     }
   }
 }

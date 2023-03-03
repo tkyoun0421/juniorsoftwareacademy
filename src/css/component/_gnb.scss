@@ -179,7 +179,7 @@
         }
       }
     }
-  }
+  }  
   &.show {
     .nav {
       .gnb {
@@ -204,6 +204,21 @@
         transition: all .3s;
         border-top: 1px solid #D2E0E9;
         @include vp1200 {
+          display: none;
+        }
+      }
+    }
+  }  
+}
+
+.header.scroll {
+  .nav {
+    .gnb {
+      .depth1 {
+        a {
+          color: $white;
+        }
+        .gnb2 {
           display: none;
         }
       }

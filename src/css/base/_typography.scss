@@ -9,9 +9,28 @@ h2 {
   font-size: 35px;
   font-weight: 700;
   text-transform: uppercase;
+  @include vp768 {
+    font-size: 32px;
+  }
 }
 
 h3 {
   font-size: 32px;
   font-weight: 600;
+  @include vp1200 {
+    font-size: 28px;
+  }
+  @include vp768 {
+    font-size: 20px;
+  }
+}
+
+.text {
+  font-size: 17px;
+  @include vp1200 {
+    font-size: 15px;
+  }
+  @include vp768 {
+    font-size: 13px;
+  }
 }

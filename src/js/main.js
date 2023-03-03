@@ -8,7 +8,8 @@ $(function(){
     $winWidth = $(window).width();
 
     if($winWidth < TABLET_WIDTH) {
-      $(".spot-menu .login span").addClass("blind");      
+      $(".spot-menu .login span").addClass("blind");
+      scrollLogoChange();      
     } else {
       $(".spot-menu .login span").removeClass("blind");
     }
@@ -30,6 +31,7 @@ $(function(){
   function showGnb() {
     if ($winWidth > TABLET_WIDTH) {
       $(".header").addClass("show");      
+      $(".header").removeClass("scroll");
       changeColorKakao();
     }
     toggleLogoColor();
@@ -50,14 +52,24 @@ $(function(){
     } else {
       $(".logo img").removeClass("hidden");
       $(".logo img").odd().addClass("hidden");
+    }    
+  }
+
+  function scrollLogoChange() {
+    if ($(".header").hasClass("scroll")) {
+      $(".logo img").removeClass("hidden");
+      $(".logo img").even().addClass("hidden");
+    } else {
+      $(".logo img").removeClass("hidden");
+      $(".logo img").odd().addClass("hidden");
     }
   }
 
   function changeColorKakao() {
     if ($(".header").hasClass("show")) {
-      blackKakao()
+      blackKakao();
     } else {
-      whiteKakao()
+      whiteKakao();
     }
   }
 
@@ -71,8 +83,6 @@ $(function(){
     $(".header .spot-menu .kakao").eq(1).css({'display': 'none'});
   }
 
-  
-  
   function onBar (){
     $(".nav").addClass("on");
   }
@@ -86,8 +96,24 @@ $(function(){
     $(this).addClass("on");
   }
 
+  function scrollFixedHeader() {
+    $(window).scroll(function() {
+      if($(window).scrollTop() > 1) {
+        $(".header").addClass("scroll");
+        scrollLogoChange();       
+        blackKakao(); 
+      } else {
+        $(".header").removeClass("scroll");
+        scrollLogoChange();
+        whiteKakao();
+      }
+    });
+  }
+  
   // 실행
-  function init() {}
+  function init() {
+    scrollFixedHeader();
+  }
 
   function event() {
     $(".bars").on("click", onBar);
