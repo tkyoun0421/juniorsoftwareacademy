@@ -10,6 +10,17 @@
           animation: fadezoom 4s 0s forwards;
         }
       }
+      ::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(0,0,0,0) 70%, rgba(45,81,234,1) 99%);
+        opacity: .25;
+      }
       .slide1 .img-box {
         @include bg("img-visual1.jpg");
       }
@@ -151,7 +162,7 @@
           margin-top: 20px;
         }
       }
-    }
+    }        
     a {
       display: inline-block;
       margin-top: 90px;
@@ -198,6 +209,29 @@
           width: 25px;
           height: 25px;
         }
+      }
+    }
+    :nth-child(2) {
+      position: relative;
+    }
+    :nth-child(2)::after {
+      content: '';
+      display: block;
+      width: 250px;
+      height: 1px;
+      background: $white;
+      position: absolute;
+      bottom: 24%;
+      right: -10%;
+      transform: translate(10%, -24%);
+      @include vp2000 {
+        width: 200px;
+      }
+      @include vp1600 {
+        width: 120px;
+      }
+      @include vp768 {
+        display: none;
       }
     }
   }

@@ -1,0 +1,79 @@
+.header {
+  .spot-menu {
+    @include aic;
+    .login {
+      display: flex;
+      i {
+        font-size: 21px;
+        color: $white;
+      }
+      span {
+        @include vp1600 {
+          display: none;
+        }
+      }
+    }
+    a {
+      height: 30px;
+      padding: 0 20px;
+      @include vp1200 {
+        padding: 0 10px;
+      }      
+      img {
+        width: 22px;
+        height: 21px;
+      }
+    }     
+    .kakao {
+      @include vp768 {
+        display: none;
+      }
+    }
+    :nth-child(3) {
+      display: none;
+    }
+    button {
+      background-color: transparent;
+      padding: 0 20px;
+      @include vp1200 {
+        padding: 0 10px;
+      }
+    } 
+    span {
+      padding-left: 8px;
+      font-size: 13px;
+      color: $whitef7;
+      @include vp1200 {
+        display: none;
+      }
+    }
+    .bars {
+      display: none;
+      color: $whitef7;
+      font-size: 21px;
+      @include vp1200 {
+        display: flex;
+      }
+    }
+  }
+  &.show {
+    .spot-menu {
+      .login {
+        i {
+          color: $black;
+        }
+        span {
+          color: $black;
+        }
+      }
+      a {
+        i {
+          color: $black; 
+        }
+        span {
+          color: $black;
+        }
+      } 
+    }
+  }
+}

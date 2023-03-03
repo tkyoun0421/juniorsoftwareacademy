@@ -1,0 +1,212 @@
+.header {
+  .nav {
+    height: 100%;
+    transition: all .4s ease-in-out;
+    @include vp1200 {
+      position: fixed;
+      top: 0;
+      left: 100%;
+    }    
+    .gnb {
+      @include aic;
+      @include ab(50%, 50%);
+      height: 100%;
+      @include vp1200 {
+        display: none;
+      }
+      .depth1:nth-child(1) ~ .depth1:not(.depth2 > li){
+        margin-left: 100px;
+        @include vp1600 {
+          margin-left: 60px;
+        }
+      }
+      .depth1 {
+        height: 100%;
+        position: relative;        
+        > a {
+          @include aic;
+          height: 100%;
+          padding: 0 20px;
+          font-size: 19px;
+          font-weight: 500;
+          color: $whitef7;
+          text-transform: uppercase;
+          @include vp1600 {
+            font-size: 17px;
+          }
+        }
+        > a::after {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 4px; 
+          background-color: $blue2d;
+          transform: scaleX(0);
+          transition: .2s ease-in-out;
+        }
+        > a:focus::after,
+        a:hover::after{
+          transform: scaleX(1);
+        }
+        .gnb2 {
+          display: none;
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          transform: translate(-50%, 100%);
+          padding-top: 10px;
+          .depth2 {
+            padding: 10px 0;
+            text-align: center;
+            > a {
+              position: relative;
+              display: inline-block;
+              padding: 0;
+              color: $black;
+              font-size: 17px;
+              white-space: nowrap;
+            }
+            > a::after {
+              content: '';
+              display: block;
+              height: 1px;
+              background-color: #000;    
+              transform: scale(0);
+              transition: .3s ease-in-out;          
+            }
+            > a:hover::after,
+            a:focus::after {
+              transform: scale(1);
+            }
+          }
+        }
+      }
+    }
+    .close {
+      display: none;      
+    }
+    .depth-bg {
+      height: 0;
+      opacity: 0;
+    }
+    &.on {
+      @include fixed;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      padding: 20px 0;
+      background-color: $blue2d;
+      .gnb {
+        display: block;
+        @include positionClear;
+        margin-top: 80px;
+        .depth1 {
+          height: auto;
+          > a {
+            @include sb;
+            padding: 20px 20px;
+            color: $white;
+            pointer-events: none;
+          }
+          > a::after {
+            content: '\f078';
+            @include positionClear;
+            font-family: 'Font AWESOME 5 Free';
+            font-weight: 900;
+            background-color: transparent;
+            height: auto;
+          }
+          > a:focus::after,
+          a:hover::after{
+            transform: none;
+          }
+          .gnb2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding-top: 0;
+            height: auto;
+            overflow: hidden;
+            @include positionClear;
+            background-color: $blue19;
+            .depth2 {
+              padding: 0 30px;
+              text-align: left;
+              display: flex;
+              align-items: center;
+              height: 0px;
+              transition: .5s ease-in-out;
+              overflow: hidden;
+              > a {
+                font-size: 15px;
+                color: $white;
+              }              
+            }
+          }
+          &.on {
+            .depth2 {
+              height: 60px;
+              > a::after {
+                display: none;
+              }
+            }
+          }
+        }
+        .depth1:nth-child(1) ~ .depth1:not(.depth2 > li) {
+          margin-left: 0;
+        }
+        :nth-child(3) > a {
+          pointer-events: unset;
+        }
+        :nth-child(3) > a::after {
+          display: none;
+        }
+      }
+      .close {
+        @include vp1200 {
+          display: flex;
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          font-size: 20px;
+          color: $white;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+  &.show {
+    .nav {
+      .gnb {
+        .depth1 {
+          a {
+            color: $black;
+          }
+          .gnb2 {
+            display: block;
+          }
+        }
+      }
+      .depth-bg {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        background-color: #fff;
+        width: 100%;
+        height: 200px;
+        z-index: -1;
+        opacity: 1;
+        transition: all .3s;
+        border-top: 1px solid #D2E0E9;
+        @include vp1200 {
+          display: none;
+        }
+      }
+    }
+  }
+}

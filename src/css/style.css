@@ -115,6 +115,17 @@ img {
   font-family: "Noto Sans KR", "Roboto", sans-serif;
 }
 
+h2 {
+  font-size: 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
 @keyframes fadezoom {
   from {
     transform: scale(1.15);
@@ -136,47 +147,15 @@ img {
     opacity: 0;
   }
 }
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  padding: 0 40px;
-  background-color: transparent;
-  z-index: 1000;
-  transition: background-color 0.3s;
-}
-@media (min-width: 0) and (max-width: 1200px) {
-  .header {
-    padding: 0 20px;
-  }
-}
-@media (min-width: 0) and (max-width: 768px) {
-  .header {
-    padding: 0 10px;
-  }
-}
-.header .logo a {
-  display: flex;
-  align-items: center;
-}
-.header .logo a img {
-  width: 120px;
-  vertical-align: middle;
-}
-.header .logo a img:nth-child(2) ~ img {
-  margin-left: 30px;
-}
 .header .nav {
   height: 100%;
+  transition: all 0.4s ease-in-out;
 }
 @media (min-width: 0) and (max-width: 1200px) {
   .header .nav {
-    display: none;
+    position: fixed;
+    top: 0;
+    left: 100%;
   }
 }
 .header .nav .gnb {
@@ -187,6 +166,11 @@ img {
   top: 50%;
   transform: translate(-50%, -50%);
   height: 100%;
+}
+@media (min-width: 0) and (max-width: 1200px) {
+  .header .nav .gnb {
+    display: none;
+  }
 }
 .header .nav .gnb .depth1:nth-child(1) ~ .depth1:not(.depth2 > li) {
   margin-left: 100px;
@@ -200,7 +184,7 @@ img {
   height: 100%;
   position: relative;
 }
-.header .nav .gnb .depth1 a {
+.header .nav .gnb .depth1 > a {
   display: flex;
   align-items: center;
   height: 100%;
@@ -211,11 +195,11 @@ img {
   text-transform: uppercase;
 }
 @media (min-width: 0) and (max-width: 1600px) {
-  .header .nav .gnb .depth1 a {
+  .header .nav .gnb .depth1 > a {
     font-size: 17px;
   }
 }
-.header .nav .gnb .depth1 a::after {
+.header .nav .gnb .depth1 > a::after {
   content: "";
   display: block;
   position: absolute;
@@ -227,7 +211,7 @@ img {
   transform: scaleX(0);
   transition: 0.2s ease-in-out;
 }
-.header .nav .gnb .depth1 a:focus::after,
+.header .nav .gnb .depth1 > a:focus::after,
 .header .nav .gnb .depth1 a:hover::after {
   transform: scaleX(1);
 }
@@ -243,7 +227,7 @@ img {
   padding: 10px 0;
   text-align: center;
 }
-.header .nav .gnb .depth1 .gnb2 .depth2 a {
+.header .nav .gnb .depth1 .gnb2 .depth2 > a {
   position: relative;
   display: inline-block;
   padding: 0;
@@ -251,18 +235,141 @@ img {
   font-size: 17px;
   white-space: nowrap;
 }
-.header .nav .gnb .depth1 .gnb2 .depth2 a::after {
+.header .nav .gnb .depth1 .gnb2 .depth2 > a::after {
+  content: "";
+  display: block;
   height: 1px;
   background-color: #000;
+  transform: scale(0);
+  transition: 0.3s ease-in-out;
 }
-.header .nav .gnb .depth1 .gnb2 .depth2 a:hover::after,
+.header .nav .gnb .depth1 .gnb2 .depth2 > a:hover::after,
 .header .nav .gnb .depth1 .gnb2 .depth2 a:focus::after {
   transform: scale(1);
+}
+.header .nav .close {
+  display: none;
 }
 .header .nav .depth-bg {
   height: 0;
   opacity: 0;
 }
+.header .nav.on {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding: 20px 0;
+  background-color: #2D51D6;
+}
+.header .nav.on .gnb {
+  display: block;
+  position: static;
+  transform: none;
+  margin-top: 80px;
+}
+.header .nav.on .gnb .depth1 {
+  height: auto;
+}
+.header .nav.on .gnb .depth1 > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+  color: #fff;
+  pointer-events: none;
+}
+.header .nav.on .gnb .depth1 > a::after {
+  content: "\f078";
+  position: static;
+  transform: none;
+  font-family: "Font AWESOME 5 Free";
+  font-weight: 900;
+  background-color: transparent;
+  height: auto;
+}
+.header .nav.on .gnb .depth1 > a:focus::after,
+.header .nav.on .gnb .depth1 a:hover::after {
+  transform: none;
+}
+.header .nav.on .gnb .depth1 .gnb2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 0;
+  height: auto;
+  overflow: hidden;
+  position: static;
+  transform: none;
+  background-color: #1939af;
+}
+.header .nav.on .gnb .depth1 .gnb2 .depth2 {
+  padding: 0 30px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  height: 0px;
+  transition: 0.5s ease-in-out;
+  overflow: hidden;
+}
+.header .nav.on .gnb .depth1 .gnb2 .depth2 > a {
+  font-size: 15px;
+  color: #fff;
+}
+.header .nav.on .gnb .depth1.on .depth2 {
+  height: 60px;
+}
+.header .nav.on .gnb .depth1.on .depth2 > a::after {
+  display: none;
+}
+.header .nav.on .gnb .depth1:nth-child(1) ~ .depth1:not(.depth2 > li) {
+  margin-left: 0;
+}
+.header .nav.on .gnb :nth-child(3) > a {
+  pointer-events: unset;
+}
+.header .nav.on .gnb :nth-child(3) > a::after {
+  display: none;
+}
+@media (min-width: 0) and (max-width: 1200px) {
+  .header .nav.on .close {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    color: #fff;
+    background-color: transparent;
+  }
+}
+.header.show .nav .gnb .depth1 a {
+  color: #000;
+}
+.header.show .nav .gnb .depth1 .gnb2 {
+  display: block;
+}
+.header.show .nav .depth-bg {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  height: 200px;
+  z-index: -1;
+  opacity: 1;
+  transition: all 0.3s;
+  border-top: 1px solid #D2E0E9;
+}
+@media (min-width: 0) and (max-width: 1200px) {
+  .header.show .nav .depth-bg {
+    display: none;
+  }
+}
+
 .header .spot-menu {
   display: flex;
   align-items: center;
@@ -273,6 +380,11 @@ img {
 .header .spot-menu .login i {
   font-size: 21px;
   color: #fff;
+}
+@media (min-width: 0) and (max-width: 1600px) {
+  .header .spot-menu .login span {
+    display: none;
+  }
 }
 .header .spot-menu a {
   height: 30px;
@@ -324,27 +436,6 @@ img {
     display: flex;
   }
 }
-.header.show {
-  background-color: #fff;
-}
-.header.show .nav .gnb .depth1 a {
-  color: #000;
-}
-.header.show .nav .gnb .depth1 .gnb2 {
-  display: block;
-}
-.header.show .nav .depth-bg {
-  position: absolute;
-  top: 100px;
-  left: 0;
-  background-color: #fff;
-  width: 100%;
-  height: 200px;
-  z-index: -1;
-  opacity: 1;
-  transition: all 0.3s;
-  border-top: 1px solid #D2E0E9;
-}
 .header.show .spot-menu .login i {
   color: #000;
 }
@@ -358,6 +449,45 @@ img {
   color: #000;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding: 0 40px;
+  background-color: transparent;
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+@media (min-width: 0) and (max-width: 1200px) {
+  .header {
+    padding: 0 20px;
+  }
+}
+@media (min-width: 0) and (max-width: 768px) {
+  .header {
+    padding: 0 10px;
+  }
+}
+.header .logo a {
+  display: flex;
+  align-items: center;
+}
+.header .logo a img {
+  width: 120px;
+  vertical-align: middle;
+}
+.header .logo a img:nth-child(2) ~ img {
+  margin-left: 30px;
+}
+.header.show {
+  background-color: #fff;
+}
+
 .visual {
   position: relative;
 }
@@ -366,6 +496,17 @@ img {
 }
 .visual .swiper .swiper-wrapper .swiper-slide.swiper-slide-active .img-box {
   animation: fadezoom 4s 0s forwards;
+}
+.visual .swiper .swiper-wrapper ::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 70%, rgb(45, 81, 234) 99%);
+  opacity: 0.25;
 }
 .visual .swiper .swiper-wrapper .slide1 .img-box {
   background: url(../images/img-visual1.jpg);
@@ -605,6 +746,35 @@ img {
   .visual .swiper-textbox a span::after {
     width: 25px;
     height: 25px;
+  }
+}
+.visual .swiper-textbox :nth-child(2) {
+  position: relative;
+}
+.visual .swiper-textbox :nth-child(2)::after {
+  content: "";
+  display: block;
+  width: 250px;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  bottom: 24%;
+  right: -10%;
+  transform: translate(10%, -24%);
+}
+@media (min-width: 0) and (max-width: 2000px) {
+  .visual .swiper-textbox :nth-child(2)::after {
+    width: 200px;
+  }
+}
+@media (min-width: 0) and (max-width: 1600px) {
+  .visual .swiper-textbox :nth-child(2)::after {
+    width: 120px;
+  }
+}
+@media (min-width: 0) and (max-width: 768px) {
+  .visual .swiper-textbox :nth-child(2)::after {
+    display: none;
   }
 }
 

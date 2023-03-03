@@ -52,9 +52,28 @@
   align-items: center;
 }
 
+@mixin sb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @mixin ab($left, $top) {
   position: absolute;
   left: $left;
   top: $top;
   transform: translate(-$left, -$top);
+}
+
+@mixin fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+// 클리어
+
+@mixin positionClear {
+  position: static;
+  transform: none;
 }
