@@ -1,0 +1,68 @@
+.banner-sec {
+  .container {
+    .text-box {
+      p {
+        font-size: 47px;
+        font-weight: 600;
+        letter-spacing: -0.5px;
+        @include vp1600 {
+          font-size: 42px;
+        }
+        @include vp1200 {
+          font-size: 34px;
+        }
+        @include vp768 {
+          font-size: 22px;
+        }
+        span {
+          color: $blue2d;
+        }
+      }
+    }
+  }
+  .img-box {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    padding-top: min(50%, 900px);
+    overflow-x: hidden;
+    .door {
+      transition: all 2s;
+      transition-delay: .5s;
+      position: absolute;
+      z-index: 3;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background-color: $white;
+    }
+    .left-door {
+      left: 0%;
+    }
+    .right-door {
+      left: 50%;      
+    }
+    .img {
+      @include ab(50%, 50%);
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center
+      }
+    }
+  }
+}
+
+.banner-sec.on {
+  .img-box {
+    .left-door {
+      transform: translateX(-101%);
+    }
+    .right-door {
+      transform: translateX(101%);
+    }
+  }
+}

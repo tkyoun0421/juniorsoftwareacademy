@@ -71,13 +71,6 @@
   left: 0;
 }
 
-@mixin webContainer {
-  width: 1440px;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 // 클리어
 
 @mixin positionClear {

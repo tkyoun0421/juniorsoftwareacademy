@@ -57,11 +57,7 @@
   background-color: $white;
   .logo {
     a {
-      @include aic;
-      img {
-        width: 120px;
-        vertical-align: middle;  
-      }      
+      @include aic; 
       img:nth-child(odd) {
         display: none;
       }
