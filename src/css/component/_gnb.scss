@@ -112,6 +112,7 @@
             padding: 20px 20px;
             color: $white;
             pointer-events: none;
+            cursor: pointer;
           }
           > a::after {
             content: '\f078';
@@ -179,36 +180,37 @@
         }
       }
     }
-  }  
-  &.show {
-    .nav {
-      .gnb {
-        .depth1 {
-          a {
-            color: $black;
-          }
-          .gnb2 {
-            display: block;
-          }
+  }    
+}
+
+.header.show {
+  .nav {
+    .gnb {
+      .depth1 {
+        a {
+          color: $black;
         }
-      }
-      .depth-bg {
-        position: absolute;
-        top: 100px;
-        left: 0;
-        background-color: #fff;
-        width: 100%;
-        height: 200px;
-        z-index: -1;
-        opacity: 1;
-        transition: all .3s;
-        border-top: 1px solid #D2E0E9;
-        @include vp1200 {
-          display: none;
+        .gnb2 {
+          display: block;
         }
       }
     }
-  }  
+    .depth-bg {
+      position: absolute;
+      top: 100px;
+      left: 0;
+      background-color: #fff;
+      width: 100%;
+      height: 200px;
+      z-index: -1;
+      opacity: 1;
+      transition: all .3s;
+      border-top: 1px solid #D2E0E9;
+      @include vp1200 {
+        display: none;
+      }
+    }
+  }
 }
 
 .header.scroll {
@@ -216,10 +218,10 @@
     .gnb {
       .depth1 {
         a {
-          color: $white;
-        }
-        .gnb2 {
-          display: none;
+          color: $black;
+          @include vp1200 {
+            color: $white;
+          }
         }
       }
     }

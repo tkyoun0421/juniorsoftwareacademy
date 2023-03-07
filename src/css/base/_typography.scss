@@ -5,7 +5,7 @@
   font-family: 'Noto Sans KR', 'Roboto', sans-serif;
 }
 
-h2 {
+.title {
   font-size: 35px;
   font-weight: 700;
   text-transform: uppercase;
@@ -14,7 +14,7 @@ h2 {
   }
 }
 
-h3 {
+.p-title {
   font-size: 32px;
   font-weight: 600;
   @include vp1200 {
@@ -25,7 +25,7 @@ h3 {
   }
 }
 
-.text {
+.p-text {
   font-size: 17px;
   @include vp1200 {
     font-size: 15px;

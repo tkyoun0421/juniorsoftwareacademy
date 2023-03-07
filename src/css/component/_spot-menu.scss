@@ -6,6 +6,9 @@
       i {
         font-size: 21px;
         color: $white;
+        @include vp768 {
+          font-size: 18px;
+        }
       }
       span {
         @include vp1600 {
@@ -29,7 +32,7 @@
         display: none;
       }
     }
-    :nth-child(3) {
+    .kakao-b {
       display: none;
     }
     button {
@@ -54,29 +57,39 @@
       @include vp1200 {
         display: flex;
       }
-    }
-  }
-  &.show {
-    .spot-menu {
-      .login {
-        i {
-          color: $black;
-        }
-        span {
-          color: $black;
-        }
+      @include vp768 {
+        font-size: 18px;
       }
-      a {
-        i {
-          color: $black; 
-        }
-        span {
-          color: $black;
-        }
-      } 
-      .bars {
+    }
+  }  
+}
+
+.header.show {
+  .spot-menu {
+    .login {
+      i {
         color: $black;
       }
+      span {
+        color: $black;
+      }
+    }
+    a {
+      i {
+        color: $black; 
+      }
+      span {
+        color: $black;
+      }
+    } 
+    .kakao-w {
+      display: none;
+    }
+    .kakao-b {
+      display: block;
+    }
+    .bars {
+      color: $black;
     }
   }
 }
@@ -97,8 +110,17 @@
       }
       span {
         color: $black;
-      }
+      }  
     } 
+    .kakao-w {
+      display: none;
+    }
+    .kakao-b {
+      display: block;
+      @include vp768 {
+        display: none;
+      }
+    }
     .bars {
       color: $black;
     }

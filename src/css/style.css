@@ -115,42 +115,42 @@ img {
   font-family: "Noto Sans KR", "Roboto", sans-serif;
 }
 
-h2 {
+.title {
   font-size: 35px;
   font-weight: 700;
   text-transform: uppercase;
 }
 @media (min-width: 0) and (max-width: 768px) {
-  h2 {
+  .title {
     font-size: 32px;
   }
 }
 
-h3 {
+.p-title {
   font-size: 32px;
   font-weight: 600;
 }
 @media (min-width: 0) and (max-width: 1200px) {
-  h3 {
+  .p-title {
     font-size: 28px;
   }
 }
 @media (min-width: 0) and (max-width: 768px) {
-  h3 {
+  .p-title {
     font-size: 20px;
   }
 }
 
-.text {
+.p-text {
   font-size: 17px;
 }
 @media (min-width: 0) and (max-width: 1200px) {
-  .text {
+  .p-text {
     font-size: 15px;
   }
 }
 @media (min-width: 0) and (max-width: 768px) {
-  .text {
+  .p-text {
     font-size: 13px;
   }
 }
@@ -311,6 +311,7 @@ h3 {
   padding: 20px 20px;
   color: #fff;
   pointer-events: none;
+  cursor: pointer;
 }
 .header .nav.on .gnb .depth1 > a::after {
   content: "\f078";
@@ -375,6 +376,7 @@ h3 {
     background-color: transparent;
   }
 }
+
 .header.show .nav .gnb .depth1 a {
   color: #000;
 }
@@ -400,10 +402,12 @@ h3 {
 }
 
 .header.scroll .nav .gnb .depth1 a {
-  color: #fff;
+  color: #000;
 }
-.header.scroll .nav .gnb .depth1 .gnb2 {
-  display: none;
+@media (min-width: 0) and (max-width: 1200px) {
+  .header.scroll .nav .gnb .depth1 a {
+    color: #fff;
+  }
 }
 
 .header .spot-menu {
@@ -416,6 +420,11 @@ h3 {
 .header .spot-menu .login i {
   font-size: 21px;
   color: #fff;
+}
+@media (min-width: 0) and (max-width: 768px) {
+  .header .spot-menu .login i {
+    font-size: 18px;
+  }
 }
 @media (min-width: 0) and (max-width: 1600px) {
   .header .spot-menu .login span {
@@ -440,7 +449,7 @@ h3 {
     display: none;
   }
 }
-.header .spot-menu :nth-child(3) {
+.header .spot-menu .kakao-b {
   display: none;
 }
 .header .spot-menu button {
@@ -472,6 +481,12 @@ h3 {
     display: flex;
   }
 }
+@media (min-width: 0) and (max-width: 768px) {
+  .header .spot-menu .bars {
+    font-size: 18px;
+  }
+}
+
 .header.show .spot-menu .login i {
   color: #000;
 }
@@ -483,6 +498,12 @@ h3 {
 }
 .header.show .spot-menu a span {
   color: #000;
+}
+.header.show .spot-menu .kakao-w {
+  display: none;
+}
+.header.show .spot-menu .kakao-b {
+  display: block;
 }
 .header.show .spot-menu .bars {
   color: #000;
@@ -499,6 +520,17 @@ h3 {
 }
 .header.scroll .spot-menu a span {
   color: #000;
+}
+.header.scroll .spot-menu .kakao-w {
+  display: none;
+}
+.header.scroll .spot-menu .kakao-b {
+  display: block;
+}
+@media (min-width: 0) and (max-width: 768px) {
+  .header.scroll .spot-menu .kakao-b {
+    display: none;
+  }
 }
 .header.scroll .spot-menu .bars {
   color: #000;
@@ -520,12 +552,13 @@ h3 {
 }
 @media (min-width: 0) and (max-width: 1200px) {
   .header {
+    height: 90px;
     padding: 0 20px;
   }
 }
 @media (min-width: 0) and (max-width: 768px) {
   .header {
-    padding: 0 10px;
+    padding: 20px 15px;
   }
 }
 .header .logo a {
@@ -536,14 +569,49 @@ h3 {
   width: 120px;
   vertical-align: middle;
 }
+@media (min-width: 0) and (max-width: 768px) {
+  .header .logo a img {
+    width: 80px;
+  }
+}
 .header .logo a img:nth-child(2) ~ img {
   margin-left: 30px;
 }
+
 .header.show {
   background-color: #fff;
 }
+.header.show .logo a {
+  display: flex;
+  align-items: center;
+}
+.header.show .logo a img {
+  width: 120px;
+  vertical-align: middle;
+}
+.header.show .logo a img:nth-child(odd) {
+  display: none;
+}
+.header.show .logo a img:nth-child(even) {
+  display: inline;
+}
+
 .header.scroll {
   background-color: #fff;
+}
+.header.scroll .logo a {
+  display: flex;
+  align-items: center;
+}
+.header.scroll .logo a img {
+  width: 120px;
+  vertical-align: middle;
+}
+.header.scroll .logo a img:nth-child(odd) {
+  display: none;
+}
+.header.scroll .logo a img:nth-child(even) {
+  display: inline;
 }
 
 .visual {
@@ -887,4 +955,102 @@ h3 {
   opacity: 0.6;
   z-index: 2;
   pointer-events: none;
+}
+
+.program-sec {
+  width: 1440px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  padding-top: 180px;
+}
+@media (min-width: 0) and (max-width: 768px) {
+  .program-sec {
+    padding-top: 100px;
+  }
+}
+.program-sec .program {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: -120px;
+}
+@media (min-width: 0) and (max-width: 768px) {
+  .program-sec .program {
+    padding: 0 15px;
+    margin-top: 0px;
+  }
+}
+.program-sec .program .program-item {
+  position: relative;
+  width: calc(50% - 60px);
+  padding-right: 20px;
+}
+@media (min-width: 0) and (max-width: 768px) {
+  .program-sec .program .program-item {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 50px;
+  }
+}
+.program-sec .program .program-item a .img-box {
+  position: relative;
+  width: 100%;
+  padding-top: 80%;
+  overflow: hidden;
+}
+.program-sec .program .program-item a .img-box img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transition: 0.3s;
+}
+.program-sec .program .program-item a .text-box {
+  margin-top: 25px;
+}
+.program-sec .program .program-item a .text-box .p-text {
+  margin-top: 15px;
+}
+.program-sec .program .program-item a .side-text {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  transform: translateX(100%);
+}
+.program-sec .program .program-item a .side-text span {
+  color: #2D51D6;
+  font-size: 14px;
+  font-weight: 600;
+  writing-mode: vertical-rl;
+}
+.program-sec .program .program-item :hover img {
+  transform: scale(1.05);
+}
+.program-sec .program .program-item:nth-child(2) {
+  align-self: flex-start;
+  margin-top: -200px;
+}
+@media (min-width: 0) and (max-width: 768px) {
+  .program-sec .program .program-item:nth-child(2) {
+    margin-top: 50px;
+  }
+}
+.program-sec .program .program-item:nth-child(3) {
+  margin-top: -250px;
+}
+@media (min-width: 0) and (max-width: 1200px) {
+  .program-sec .program .program-item:nth-child(3) {
+    margin-top: -150px;
+  }
+}
+@media (min-width: 0) and (max-width: 768px) {
+  .program-sec .program .program-item:nth-child(3) {
+    margin-top: 50px;
+  }
 }/*# sourceMappingURL=style.css.map */
