@@ -1670,4 +1670,9 @@ footer .top-btn-box .top-btn {
 }
 footer .top-btn-box:hover {
   background-color: #000;
+}
+@media (min-width: 0) and (max-width: 768px) {
+  footer .top-btn-box:hover {
+    background-color: #2D51D6;
+  }
 }/*# sourceMappingURL=style.css.map */

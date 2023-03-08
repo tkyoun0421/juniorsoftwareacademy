@@ -156,6 +156,9 @@ footer {
     }   
     &:hover {
       background-color: $black;
+      @include vp768 {
+        background-color: $blue2d;
+      }
     }
   }
 }
