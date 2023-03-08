@@ -114,6 +114,12 @@ $(function(){
       });
     }
   }
+
+  function toTop() {
+    $("html,body").animate({
+      scrollTop: 0}
+      , "fast");
+  }
   
   // 실행
   function init() {
@@ -142,6 +148,7 @@ $(function(){
     $(".close").on("click", closeBars);
     $(".depth1").on("click", openDepth2);
     $(window).on("mousemove", movePointer);
+    $(".top-btn").on("click", toTop);
   };
 
   init();
