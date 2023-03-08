@@ -596,7 +596,7 @@ button {
   }
 }
 
-.header {
+#header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -611,30 +611,30 @@ button {
   transition: background-color 0.3s;
 }
 @media (min-width: 0) and (max-width: 1200px) {
-  .header {
+  #header {
     height: 90px;
     padding: 0 20px;
   }
 }
 @media (min-width: 0) and (max-width: 768px) {
-  .header {
+  #header {
     padding: 20px 15px;
   }
 }
-.header .logo a {
+#header .logo a {
   display: flex;
   align-items: center;
 }
-.header .logo a img {
+#header .logo a img {
   width: 120px;
   vertical-align: middle;
 }
 @media (min-width: 0) and (max-width: 768px) {
-  .header .logo a img {
+  #header .logo a img {
     width: 80px;
   }
 }
-.header .logo a img:nth-child(2) ~ img {
+#header .logo a img:nth-child(2) ~ img {
   margin-left: 30px;
 }
 

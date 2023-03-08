@@ -27,53 +27,7 @@
   <title>삼성 주니어 SW 아카데미</title>
 </head>
 <body>
-  <header class="header">
-    <h1 class="logo">
-      <a href="index.html">
-        <img src="src/images/h1-logo-samsung-w.svg" alt="삼성 로고">
-        <img class="hidden" src="src/images/h1-logo-samsung.svg" alt="삼성 로고">
-        <img src="src/images/h1-logo-jakorea-w.svg" alt="jakorea 로고">
-        <img class="hidden" src="src/images/h1-logo-jakorea.svg" alt="jakorea 로고">
-      </a>      
-    </h1>
-    <nav class="nav">
-      <ul class="gnb">
-        <li class="depth1">
-          <a href="information.html">소개</a>
-          <ul class="gnb2">
-            <li class="depth2"><a href="information.html">주니어 SW 아카데미</a></li>
-            <li class="depth2"><a href="office.html">운영사무국</a></li>
-          </ul>
-        </li>
-        <li class="depth1">
-          <a href="program.html">프로그램</a>
-          <ul class="gnb2">
-            <li class="depth2"><a href="program.html">학교프로그램</a></li>
-            <li class="depth2"><a href="donation.html">임직원재능기부</a></li>
-            <li class="depth2"><a href="forum.html">SW 교육 포럼</a></li>
-          </ul>
-        </li>
-        <li class="depth1"><a href="now.html">now</a></li>
-        <li class="depth1">
-          <a href="notice.html">공지</a>
-          <ul class="gnb2">
-            <li class="depth2"><a href="notice.html">공지사항</a></li>
-            <li class="depth2"><a href="faq.html">FAQ</a></li>
-          </ul>
-        </li>
-      </ul>
-      <div class="depth-bg"></div>      
-      <button class="close" type="button" aria-label="전체메뉴 닫기 버튼"><i class="fa-solid fa-xmark"></i></button>
-    </nav>
-    <div class="spot-menu">
-      <button class="login" aria-label="로그인 버튼" type="button"><i class="fa-solid fa-user"></i><span>로그인</span></button>
-      <a href="#" class="kakao kakao-w"><img src="src/images/ico-kakao-w.svg" alt="카카오톡 채널"><span>카카오톡 채널</span></a>
-      <a href="#" class="kakao kakao-b"><img src="src/images/ico-kakao-b.svg" alt="카카오톡 채널"><span>카카오톡 채널</span></a>
-      <button class="bars" aria-label="전체메뉴 보기 버튼" type="button">        
-        <i class="fa-solid fa-bars"></i>
-      </button>
-    </div>
-  </header>
+  < ? include "src/common/header.html" ? >
   <main>
     <section class="visual-sec">
       <div class="visual">
@@ -122,7 +76,7 @@
       <div class="container">
         <h2 class="title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="0" data-aos-once="true">program</h2>
         <div class="program">
-          <article class="program-item" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="0" data-aos-once="true">
+          <div class="program-item" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="0" data-aos-once="true">
             <a href="#">
               <div class="img-box">
                 <img src="src/images/img-program-1.png" alt="">
@@ -135,8 +89,8 @@
                 <span>Samsung Junior SW Academy</span>
               </p>
             </a>
-          </article>
-          <article class="program-item" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200" data-aos-once="true">
+          </div>
+          <div class="program-item" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200" data-aos-once="true">
             <a href="#">
               <div class="img-box">
                 <img src="src/images/img-program-2.png" alt="">
@@ -149,8 +103,8 @@
                 <span>Talent Donation</span>
               </p>
             </a>
-          </article>
-          <article class="program-item" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400" data-aos-once="true">
+          </div>
+          <div class="program-item" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400" data-aos-once="true">
             <a href="#">
               <div class="img-box">
                 <img src="src/images/img-program-3.png" alt="">
@@ -163,7 +117,7 @@
                 <span>SW Education Forum</span>
               </p>
             </a>
-          </article>
+          </div>
         </div>
       </div>
     </section>
@@ -393,65 +347,17 @@
       </div>
     </section>
   </main>  
-  <footer>
-    <div class="container">
-      <div class="top">
-        <div class="left">
-          <h2 class="ft-logo">
-            삼성<br>
-            주니어 SW<br>
-            아카데미
-          </h2>
-          <address>
-            <dl>
-              <dt>주소</dt>
-              <dd>(07547) 서울 강서구 양천로 583, B동 1408호</dd>
-              <dt>대표전화</dt>
-              <dd>
-                <a href="tel:02-6952-9746">02-6952-9746</a>
-              </dd>
-              <dt>이메일</dt>
-              <dd>
-                <a href="mailto:jsa@jakorea.org">jsa&#64;jakorea.org</a>
-              </dd>
-            </dl>
-          </address>
-        </div>
-        <div class="right">
-          <div class="ft-logo">
-            <div class="img-box">
-              <img src="src/images/ico-footer-samsung.svg" alt="삼성 로고">
-            </div>
-            <div class="img-box">
-              <img src="src/images/ico-footer-jakorea.svg" alt="jakorea 로고">
-            </div>
-          </div>
-          <p class="copy">&#169; 2023 사단법인 제이에이코리아. All Right Reserved.</p>
-        </div>
-      </div>
-      <div class="bottom">
-        <ul class="ft-link">
-          <li><a href="#">이용약관</a></li>
-          <li><a href="#">개인정보처리방침</a></li>
-        </ul>
-        <p class="copy">&#169; 2023 사단법인 제이에이코리아. All Right Reserved.</p>
-      </div>
-    </div>
-    <div class="top-btn-box">
-      <button type="button" class="top-btn" aria-label="맨 위로 이동하기 버튼">
-        <i class="fa-solid fa-arrow-up"></i>
-      </button>
-    </div>
-  </footer>
+  < ? include "src/common/footer.html" ? >
   <!-- swiper.js -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>   
   <!-- aos.js -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
-  </script>
-  <script src="src/js/swiper.js"></script>  
-  <script src="src/js/visual.js"></script>   
+    </script>
+  <script src="src/js/swiper.js"></script>
+  <script src="src/js/include.js"></script>  
   <script src="src/js/main.js"></script> 
+  <script src="src/js/visual.js"></script>   
 </body>
 </html>
