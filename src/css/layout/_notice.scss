@@ -1,0 +1,89 @@
+.notice-sec {
+  @include sectionWrap;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    @include vp768 {
+      flex-direction: column;
+    }
+    .title-box {
+      flex: 1;
+      @include vp768 {
+        margin-bottom: 20px;
+      }
+      .more-btn {
+        margin-top: 80px;
+      }
+    }
+    .list-box {
+      flex: 3;
+      .list {
+        border-top: 2px solid $black;
+        li {
+          border-bottom: 1px solid $grayb3;
+          a {
+            display: flex;
+            padding: 40px 0;
+            @include vp1200 {
+              padding: 35px 0;
+            }            
+            @include vp768 {
+              flex-wrap: wrap;
+              padding: 25px 0;
+            }
+            .date {
+              margin-right: 50px;
+              font-size: 20px;
+              font-weight: 700;
+              @include vp1200 {
+                font-size: 18px;
+              }
+              @include vp768 {
+                font-size: 15px;
+              }
+            }
+            .text-box {
+              @include sb;
+              width: 100%;
+              font-size: 22px;
+              font-weight: 600;
+              @include vp1200 {
+                font-size: 20px;
+              }
+              @include vp768 {
+                font-size: 17px;
+              }
+              span {
+                padding-right: 30px;
+                @include vp768 {
+                  margin-top: 15px;
+                }
+              }
+              i {    
+                font-size: 34px;
+                margin-right: 20px;
+                transition: all .5s;
+                @include vp768 {
+                  display: none;
+                }
+              }
+            }         
+          }
+          :hover {
+            color: $blue2d;
+            @include vp768 {
+              color: $black;
+            }
+          }
+          :hover i {
+            color: $black;
+            transform: translateX(15px);
+          }
+        }
+      }
+    }
+    > .more-btn {
+      margin-top: 40px;      
+    }
+  }
+}

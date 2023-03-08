@@ -1,0 +1,43 @@
+.more-btn {
+  position: relative;
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 600;
+  @include vp768 {
+    display: none;
+  }
+  ::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    display: block;
+    width: 0%;
+    height: 3px;
+    background-color: $blue2d;
+    transition: all .5s;
+  } 
+  :hover::after {
+    width: 100%;
+  }   
+}
+
+.more-btn.mb {
+  display: none;
+  @include vp768 {
+    display: block;
+    width: 500px;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 14px 15px;
+    font-size: 13px;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 20px 0px;
+    ::after {
+      display: none;
+    }
+  }
+}

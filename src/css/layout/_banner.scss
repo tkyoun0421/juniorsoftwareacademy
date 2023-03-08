@@ -17,6 +17,11 @@
         span {
           color: $blue2d;
         }
+        br {
+          @include vp1200 {
+            display: none;
+          }
+        }
       }
     }
   }

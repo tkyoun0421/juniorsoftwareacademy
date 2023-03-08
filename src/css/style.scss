@@ -7,8 +7,12 @@
 
 @import "component/gnb"; //gnb
 @import "component/spot-menu"; //spot-menu
+@import "component/more-btn"; //more-btn
 
 @import "layout/header"; //헤더 영역
 @import "layout/visual"; //비쥬얼 영역
 @import "layout/program"; //프로그램 영역
-@import "layout/banner" //배너 영역
+@import "layout/banner"; //배너 영역
+@import "layout/now"; //now 영역
+@import "layout/notice"; //notice 영역
+@import "layout/footer" //footer 영역

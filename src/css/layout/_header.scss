@@ -55,6 +55,7 @@
 
 .header.scroll {
   background-color: $white;
+  border-bottom: 1px solid #D2E0E9;
   .logo {
     a {
       @include aic; 

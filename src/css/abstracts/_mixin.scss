@@ -46,6 +46,16 @@
   }
 }
 
+@mixin sectionWrap {
+  padding: 240px 0;
+  @include vp1200 {
+    padding: 160px 0;
+  }
+  @include vp768 {
+    padding: 100px 0;
+  }
+}
+
 // 정렬
 @mixin aic {
   display: flex;
@@ -56,6 +66,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@mixin jcsb {
+  display: flex;
+  justify-content: space-between;
 }
 
 @mixin ab($left, $top) {
@@ -72,7 +87,6 @@
 }
 
 // 클리어
-
 @mixin positionClear {
   position: static;
   transform: none;

@@ -1,0 +1,134 @@
+footer {
+  background-color: $gray40;
+  padding: 70px 0 100px 0;
+  @include vp768 {
+    padding: 40px 0;
+  }
+  .container {
+    @include vp768 {
+      display: flex;
+      flex-direction: column;
+    }
+    .top {
+      @include jcsb;
+      @include vp768 {
+        order: 2;
+        flex-direction: column;
+      }
+      .left {
+        display: flex;
+        color: $white;
+        @include vp768 {
+          margin-top: 20px;
+          flex-direction: column;
+        }
+        .ft-logo {
+          flex: 1 1 130px;
+          font-size: 22px;
+          @include vp1200 {
+            font-size: 18px;
+          }
+          @include vp768 {
+            flex: auto;
+          }
+          br {
+            @include vp768 {
+              display: none;
+            }
+          }
+        }
+        address {
+          margin-left: 20px;
+          @include vp768 {
+            margin-left: 0;
+            margin-top: 10px;
+          }
+          dl {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 15px;
+            @include vp1200 {
+              font-size: 14px;
+            }
+            @include vp768 {              
+              font-size: 11px;
+            }
+            dt {
+              flex: 0 0 90px;
+            }
+            dd {
+              flex: 1 1 calc(100% - 90px);
+              a {
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+      .right {
+        @include vp768 {
+          margin-top: 30px;
+        }
+        .ft-logo {
+          display: flex;
+          .img-box {
+            width: 120px;
+            @include vp1200 {
+              width: 100px;
+            }
+          }
+          :nth-child(1) {
+            opacity: 0.4;
+          }
+          :nth-child(2) {
+            margin-left: 30px;
+          }
+        }
+        .copy {
+          display: none;
+          @include vp768 {
+            display: block;
+            font-size: 10px;
+            margin-top: 15px;
+            color: rgba(255, 255, 255, 0.2);
+          }
+        }
+      }
+    }
+    .bottom {
+      margin-top: 45px;
+      @include vp768 {
+        order: 1;
+        margin-top: 0;
+      }
+      .ft-link {
+        display: flex;
+        li {
+          a {
+            color: $white;
+            font-size: 14px;
+            @include vp768 {
+              font-size: 12px;
+            }
+          }
+        }
+        li + li {
+          margin-left: 25px;
+        }
+        :nth-child(2) a{
+          font-weight: 600;
+        }
+      }
+      .copy {
+        font-size: 12px;
+        margin-top: 15px;
+        color: rgba(255, 255, 255, 0.2);
+        @include vp768 {
+          display: none;
+        }
+      }
+    }
+  }
+}
