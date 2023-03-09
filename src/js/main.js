@@ -33,75 +33,67 @@ $(function(){
     });
   }
 
-  function addClassLoginBlind() {
-    $(".spot-menu .login span").addClass("blind");
+  function addClass(selector, className) {
+    $(`${selector}`).addClass(className);
   }
 
-  function removeClassLoginBlind() {
-    $(".spot-menu .login span").removeClass("blind");
-  }
-
-  function addClassHeaderScroll() {
-    $(".header").addClass("scroll");
-  }
-
-  function removeClassHeaderScroll() {
-    $(".header").removeClass("scroll");
+  function removeClass(selector, className) {
+    $(`${selector}`).removeClass(className);
   }
   
   function showGnb() {
     if ($winWidth > TABLET_WIDTH) {
-      $(".header").addClass("show");     
+      addClass(".header", "show");   
     }
   };
 
   function removeGnb() {
     if ($winWidth > TABLET_WIDTH) {
-      $(".header").removeClass("show");      
+      removeClass(".header", "show");    
     }
   };
 
   function onBars (){
-    $(".nav").addClass("on");
+    addClass(".nav", "on");
   }
   
   function closeBars (){
-    $(".nav").removeClass("on");
+    removeClass(".nav", "on");
   }
   
   function openDepth2() {
-    $(".depth1").removeClass("on");
+    removeClass(".depth1", "on");
     $(this).addClass("on");
   }
 
   function scrollFixedHeader() {
     if($(window).scrollTop() > 1) {
-      addClassHeaderScroll();
+      addClass(".header", "scroll");
     } else {
-      removeClassHeaderScroll();
+      removeClass(".header", "scroll");
     }
   }  
 
   function openDoor() {
     visibleScreen = $(window).scrollTop() + $(window).height() - ($(window).height() / 3);
     if(visibleScreen > $(".banner-sec").offset().top){
-      $(".banner-sec").addClass("on");
+      addClass(".banner-sec", "on");
     };
   }
 
   function addClassTabOn() {
     $(".tab li").on("click", function(){
-      $(".tab li").removeClass("on");
+      removeClass(".tab li", "on");
       $(this).addClass("on");
     });
   }
 
   function addClassPointerOn() {
     $(".now-sec .img-box").on("mouseenter", function(){
-      $(".cursor").addClass("on");
+      addClass(".cursor", "on");
     });
     $(".now-sec .img-box").on("mouseleave", function(){
-      $(".cursor").removeClass("on");
+      removeClass(".cursor", "on");
     });
   }
 
