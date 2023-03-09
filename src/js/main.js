@@ -1,5 +1,4 @@
-$(function(){
-  console.log("@");
+$(function(){  
   var $winWidth = $(window).width();
   let visibleScreen =  0;
   const TABLET_WIDTH = 1200;
@@ -114,14 +113,16 @@ $(function(){
       });
     }
   }
-
+  
   function toTop() {
     $("html,body").animate({
       scrollTop: 0}
       , "fast");
-    console.log("$");
   }
 
+  $( window ).on( "load", function() {
+    $(".top-btn").on("click", toTop);
+  });
   
   // 실행
   function init() {
@@ -149,8 +150,7 @@ $(function(){
     $(".spot-menu").blur(removeClassHeaderScroll);    
     $(".close").on("click", closeBars);
     $(".depth1").on("click", openDepth2);
-    $(window).on("mousemove", movePointer);
-    $(".top-btn").on("click", toTop);
+    $(window).on("mousemove", movePointer);    
   };
 
   init();
