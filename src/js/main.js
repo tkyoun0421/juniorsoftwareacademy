@@ -2,7 +2,6 @@ $(function(){
   var $winWidth = $(window).width();
   let visibleScreen =  0;
   const TABLET_WIDTH = 1200;
-  const MOBILE_WIDTH = 768;
 
   // 반응형 이벤트
   function resizeEvent() {
@@ -27,6 +26,7 @@ $(function(){
     $(window).on('load', function(){
       openDoor();
       scrollFixedHeader();
+      $(".top-btn").on("click", toTop);
     });
   }
 
@@ -108,10 +108,6 @@ $(function(){
       scrollTop: 0}
       , "fast");
   }
-
-  $( window ).on( "load", function() {
-    $(".top-btn").on("click", toTop);
-  });
   
   // 실행
   function init() {
