@@ -11,6 +11,7 @@
       @include aic;
       @include ab(50%, 50%);
       height: 100%;
+      padding: 0 30px;
       @include vp1200 {
         display: none;
       }

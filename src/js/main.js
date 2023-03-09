@@ -8,10 +8,7 @@ $(function(){
   function resizeEvent() {
     $(window).resize(function(){
       $winWidth = $(window).width();
-      if ($winWidth < TABLET_WIDTH) {
-        addClassLoginBlind();
-      } else {
-        removeClassLoginBlind();
+      if ($winWidth > TABLET_WIDTH) {
         closeBars();
       }
     });
@@ -135,11 +132,7 @@ $(function(){
     $(".depth-bg").mouseleave(removeGnb);
     $(".gnb").mouseleave(removeGnb);
     $(".gnb a").focus(showGnb);
-    $(".header a").focus(addClassHeaderScroll);
-    $(".header").blur(removeClassHeaderScroll);
     $(".spot-menu button").focus(removeGnb);    
-    $(".spot-menu").focus(addClassHeaderScroll);    
-    $(".spot-menu").blur(removeClassHeaderScroll);    
     $(".close").on("click", closeBars);
     $(".depth1").on("click", openDepth2);
     $(window).on("mousemove", movePointer);    
