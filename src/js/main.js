@@ -1,5 +1,5 @@
 $(function(){
-
+  console.log("@");
   var $winWidth = $(window).width();
   let visibleScreen =  0;
   const TABLET_WIDTH = 1200;
@@ -119,7 +119,9 @@ $(function(){
     $("html,body").animate({
       scrollTop: 0}
       , "fast");
+    console.log("$");
   }
+
   
   // 실행
   function init() {
