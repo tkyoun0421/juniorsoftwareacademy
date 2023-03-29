@@ -27,6 +27,7 @@ $(function(){
       openDoor();
       scrollFixedHeader();
       $(".top-btn").on("click", toTop);
+      $(".bars").on("click", onBars);
     });
   }
 
@@ -121,8 +122,7 @@ $(function(){
   }
 
   // 이벤트
-  function event() {
-    $(".bars").on("click", onBars);
+  function event() {    
     $(".gnb").mouseenter(showGnb);
     $(".depth-bg").mouseenter(showGnb);
     $(".depth-bg").mouseleave(removeGnb);
