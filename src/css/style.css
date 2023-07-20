@@ -48,9 +48,7 @@ a:hover, a:active {
 
 /* Normalize */
 select {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 
 select::-ms-expand {
@@ -1058,10 +1056,8 @@ img {
   top: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   transition: 0.3s;
 }
 .program-sec .container .program .program-item a .text-box {
@@ -1170,10 +1166,8 @@ img {
 .banner-sec .img-box .img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 
 .banner-sec.on .img-box .left-door {
@@ -1244,33 +1238,35 @@ img {
     display: none;
   }
 }
-.now-sec .container .item-box {
+.now-sec .container .item-container {
   display: flex;
   justify-content: space-between;
-  align-items: top;
-  flex-wrap: wrap;
   margin-top: 40px;
 }
-.now-sec .container .item-box .item {
+.now-sec .container .item-container .item-box {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
   width: calc(33.3333333333% - 40px);
-  height: 100%;
+}
+.now-sec .container .item-container .item-box .item {
   margin-bottom: 20px;
 }
 @media (min-width: 0) and (max-width: 768px) {
-  .now-sec .container .item-box .item {
+  .now-sec .container .item-container .item-box .item {
     width: calc(50% - 20px);
   }
 }
-.now-sec .container .item-box .item .img-box {
+.now-sec .container .item-container .item-box .item .img-box {
   position: relative;
   cursor: none;
 }
 @media (min-width: 0) and (max-width: 768px) {
-  .now-sec .container .item-box .item .img-box {
+  .now-sec .container .item-container .item-box .item .img-box {
     cursor: pointer;
   }
 }
-.now-sec .container .item-box .item .img-box .img-hover {
+.now-sec .container .item-container .item-box .item .img-box .img-hover {
   position: absolute;
   left: 0;
   top: 0;
@@ -1282,53 +1278,53 @@ img {
   transition: all 0.4s ease-in-out;
 }
 @media (min-width: 0) and (max-width: 768px) {
-  .now-sec .container .item-box .item .img-box .img-hover {
+  .now-sec .container .item-container .item-box .item .img-box .img-hover {
     display: none;
   }
 }
-.now-sec .container .item-box .item :hover .img-hover {
+.now-sec .container .item-container .item-box .item :hover .img-hover {
   opacity: 0.8;
 }
-.now-sec .container .item-box .item .text-box .tit {
+.now-sec .container .item-container .item-box .item .text-box .tit {
   font-size: 20px;
   font-weight: 600;
   margin-top: 10px;
 }
 @media (min-width: 0) and (max-width: 1200px) {
-  .now-sec .container .item-box .item .text-box .tit {
+  .now-sec .container .item-container .item-box .item .text-box .tit {
     font-size: 18px;
   }
 }
 @media (min-width: 0) and (max-width: 768px) {
-  .now-sec .container .item-box .item .text-box .tit {
+  .now-sec .container .item-container .item-box .item .text-box .tit {
     font-size: 15px;
   }
 }
-.now-sec .container .item-box .item .text-box .tag {
+.now-sec .container .item-container .item-box .item .text-box .tag {
   margin-top: 20px;
 }
 @media (min-width: 0) and (max-width: 1200px) {
-  .now-sec .container .item-box .item .text-box .tag {
+  .now-sec .container .item-container .item-box .item .text-box .tag {
     margin-top: 10px;
   }
 }
 @media (min-width: 0) and (max-width: 768px) {
-  .now-sec .container .item-box .item .text-box .tag {
+  .now-sec .container .item-container .item-box .item .text-box .tag {
     margin-top: 5px;
   }
 }
-.now-sec .container .item-box .item .text-box .tag span {
+.now-sec .container .item-container .item-box .item .text-box .tag span {
   font-size: 17px;
   font-weight: 500;
   color: #2D51D6;
 }
 @media (min-width: 0) and (max-width: 1200px) {
-  .now-sec .container .item-box .item .text-box .tag span {
+  .now-sec .container .item-container .item-box .item .text-box .tag span {
     font-size: 14px;
   }
 }
 @media (min-width: 0) and (max-width: 768px) {
-  .now-sec .container .item-box .item .text-box .tag span {
+  .now-sec .container .item-container .item-box .item .text-box .tag span {
     font-size: 12px;
   }
 }
