@@ -49,15 +49,21 @@
       display: flex;
       justify-content: space-between;
       margin-top: 40px;
+      @include vp768 {
+        flex-direction: column;
+      }
       .item-box {
         display: flex;
         flex-direction: column;
         gap: 50px;
         width: calc(100% / 3 - 40px);
+        @include vp768 {
+          width: 100%;
+        }
         .item {
           margin-bottom: 20px;
           @include vp768 {
-            width: calc(100% / 2 - 20px);
+            width: 100%;
           }
           .img-box {
             position: relative;
@@ -115,33 +121,33 @@
           }
         }
       }
-    }    
-    .cursor {
-      position: absolute;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 1000;
-      .pointer {
-        @include aic;
-        justify-content: center;
-        background-color: $white;
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        text-transform: uppercase;
-        color: $blue2d;
-        font-weight: 700;
-        font-size: 13px;
-        opacity: 0;
-        transition: all .3s ease-out;
-      }
-    }    
-    .cursor.on {
-      .pointer {
-        opacity: 1;
-      }
+    } 
+  }
+  .cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1000;
+    .pointer {
+      @include aic;
+      justify-content: center;
+      background-color: $white;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      text-transform: uppercase;
+      color: $blue2d;
+      font-weight: 700;
+      font-size: 13px;
+      opacity: 0;
+      transition: all .3s ease-out;
+    }
+  }    
+  .cursor.on {
+    .pointer {
+      opacity: 1;
     }
   }
 }
