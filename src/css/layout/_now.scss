@@ -123,31 +123,31 @@
       }
     } 
   }
-  .cursor {
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 1000;
-    .pointer {
-      @include aic;
-      justify-content: center;
-      background-color: $white;
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      text-transform: uppercase;
-      color: $blue2d;
-      font-weight: 700;
-      font-size: 13px;
-      opacity: 0;
-      transition: all .3s ease-out;
+.cursor {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 1000;
+      .pointer {
+        @include aic;
+        justify-content: center;
+        background-color: $white;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        color: $blue2d;
+        font-weight: 700;
+        font-size: 13px;
+        opacity: 0;
+        transition: all .3s ease-out;
+      }
+    }    
+    .cursor.on {
+      .pointer {
+        opacity: 1;
+      }
     }
-  }    
-  .cursor.on {
-    .pointer {
-      opacity: 1;
-    }
-  }
 }
